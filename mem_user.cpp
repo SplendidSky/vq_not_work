@@ -5,8 +5,8 @@
 
 using namespace std;
 
-#define ARRAY_X 1000 * 15
-#define ARRAY_Y 1000000
+#define ARRAY_X 1000
+#define ARRAY_Y 1000
 
 void print_mem_usage() {
     FILE* file = fopen("/proc/self/status", "r");
@@ -22,9 +22,17 @@ void print_mem_usage() {
     fclose(file);
 }
 
-int main() {
+int main(int argc, char* argv[]) {
+
+    if (argc != 2) {
+        cout << "usage: ./a.out [NUM] Mb\n";
+        return 1;
+    }
+    
+    int N = atoi(argv[1]);
+
     char **tmp = new char* [ARRAY_X];
-    for (int i = 0; i < ARRAY_X; i++) {
+    for (int i = 0; i < ARRAY_X * N; i++) {
         tmp[i] = new char[ARRAY_Y];
         for (int j = 0; j < ARRAY_Y; j++) {
             tmp[i][j] = (i * j) % 26 + 'A';
