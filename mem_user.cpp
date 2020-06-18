@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#define ARRAY_X 1000
+#define ARRAY_X 1000 * 15
 #define ARRAY_Y 1000000
 
 void print_mem_usage() {
