@@ -5,9 +5,8 @@
 
 using namespace std;
 
-#define MEM_SIZE 1000000
 #define ARRAY_X 1000
-#define ARRAY_Y 1000
+#define ARRAY_Y 1000000
 
 void print_mem_usage() {
     FILE* file = fopen("/proc/self/status", "r");
@@ -15,7 +14,7 @@ void print_mem_usage() {
 
     while (fgets(line, 128, file) != NULL) {
         if (strncmp(line, "VmRSS:", 6) == 0) {
-            cout << line << endl;
+            cout << line;
             break;
         }
     }
