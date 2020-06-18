@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
     char **tmp = new char* [ARRAY_X];
     for (int i = 0; i < ARRAY_X; i++) {
         tmp[i] = new char[ARRAY_Y * N];
-        for (int j = 0; j < ARRAY_Y; j++) {
+        for (int j = 0; j < ARRAY_Y * N; j++) {
             tmp[i][j] = (i * j) % 26 + 'A';
         }
         print_mem_usage();
