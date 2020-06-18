@@ -23,7 +23,7 @@ void print_mem_usage() {
 }
 
 int main() {
-    char **tmp;
+    char **tmp = new char* [ARRAY_X];
     for (int i = 0; i < ARRAY_X; i++) {
         tmp[i] = new char[ARRAY_Y];
         for (int j = 0; j < ARRAY_Y; j++) {
